@@ -1,0 +1,55 @@
+
+
+
+{% extends "layout.html" %}
+
+{% block title %}Sobre Mim{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>{{ dados.nome }}</h1>
+        <div class="contato">
+            {{ dados.endereco }}<br>
+            <a href="tel:{{ dados.telefone }}">{{ dados.telefone }}</a><br>
+            <a href="mailto:{{ dados.email }}">{{ dados.email }}</a><br>
+            {{ dados.idade }}
+        </div>
+
+        <h2>Formação</h2>
+        <p>{{ dados.formacao }}</p>
+
+        <h2>Experiência Profissional</h2>
+        <p><strong>{{ dados.experiencia.titulo }}</strong></p>
+        <p>{{ dados.experiencia.descricao }}</p>
+
+        <h2>Hard Skills</h2>
+        <ul>
+            {% for hard in dados.hard_skills %}
+                <li>{{ hard }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Soft Skills</h2>
+        <div>
+            {% for soft in dados.soft_skills %}
+                <span class="tag">{{ soft }}</span>
+            {% endfor %}
+        </div>
+
+        <h2>Objetivos</h2>
+        <ul>
+            {% for obj in dados.objetivos %}
+                <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Certificações e Conquistas</h2>
+        <ul>
+            {% for cert in dados.certificacoes %}
+                <li>{{ cert }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Divide a tela: Menu (fixo na esquerda) e Conteúdo (flexível na direita) */
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Configuração do Menu Lateral */
+.sidebar {
+    width: 280px;
+    background-color: #111827; /* Tom escuro elegante */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-logo {
+    padding: 30px 24px;
+    border-bottom: 1px solid #1f2937;
+}
+
+.sidebar-logo h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #3b82f6; /* Detalhe em azul moderno */
+    letter-spacing: 0.5px;
+}
+
+/* Links do Menu */
+.sidebar-menu ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar-menu li {
+    margin: 6px 16px;
+}
+
+.sidebar-menu a {
+    display: block;
+    color: #9ca3af;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Efeito ao passar o mouse */
+.sidebar-menu a:hover {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding-left: 24px; /* Efeito suave de deslocamento */
+}
+
+/* Área branca onde as páginas estendidas vão renderizar */
+.content-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-content {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 950px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-content h1 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.card-content p {
+    line-height: 1.6;
+    color: #4b5563;
+}

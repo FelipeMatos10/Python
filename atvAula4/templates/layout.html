@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Template base para as páginas do Flask Menu. 
+     Contém a estrutura básica do HTML, incluindo o menu de navegação e um bloco para o conteúdo específico de cada página. 
+     As páginas individuais estendem este template e preenchem os blocos de título e conteúdo conforme necessário. 
+     
+     O bloco 'title' é usado para definir o título da página, que é exibido na aba do navegador. 
+     O bloco 'content' é onde o conteúdo específico de cada página será inserido. -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Aqui entra o primeiro Jinja2, que é usado junto com o Flask.
+         A função url_for é utilizada para gerar URLs dinâmicas.
+         Nesse caso, ela gera o caminho para arquivos estáticos, como o CSS. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+
+    <title>{% block title %}{% endblock %} - Meu Portfólio</title>
+</head>
+
+<body>
+
+    <!-- Container principal que junta o menu e a área do conteúdo -->
+    <div class="main-wrapper">
+
+        <!-- Menu Lateral Moderno -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h2>Menu Nav</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <!-- url_for adaptado para as suas novas rotas do Flask -->
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('profissional') }}">Meu Profissional</a></li>
+                    <li><a href="{{ url_for('expectativa') }}">Expectativa de Vida</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Área de Conteúdo da Página da direita -->
+        <main class="content-container">
+            <div class="card-content">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
